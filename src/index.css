@@ -3,9 +3,65 @@
     font-size: 16px;
 }
 
+#root {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#stem {
+    display: inline-block;
+    text-align: left;
+}
+
 h1 {
     font-size: 45px;
     color: purple;
+    text-decoration: underline;
+    margin: 20px;
+    text-align: left;
+}
+
+.pointer-hover:hover {
+    cursor: pointer;
+}
+
+.green-btn {
+    outline: none;
+    border: 2px solid black;
+    background: green;
+    color: white;
+    padding: 10px;
+}
+
+.invisible {
+    display: none !important;
+}
+
+.create-day-wrapper {
+    margin-left: 20px;
+}
+
+.create-day-wrapper .create-day-form {
+    display: inline-block;
+}
+
+.create-day-wrapper .create-day-form .create-day-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.create-day-wrapper .create-day-form input[type="text"] {
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.create-day-wrapper .create-day-form .create-day-btn {
+    float: right;
+}
+
+.create-day-wrapper .create-day-form .cancel {
+    color: #a50000;
     text-decoration: underline;
 }
 
@@ -14,12 +70,15 @@ table {
     border-collapse: collapse;
     margin: 20px;
     text-align: left;
+    min-width: 330px;
 }
 
 table caption {
     font-size: 22px;
     text-align: left;
     margin-bottom: 10px;
+    width: 100%;
+    display: inline-block;
 }
 
 table caption span.dayName {
@@ -36,7 +95,6 @@ table caption span.addNewMealEntry {
 
 table caption span.addNewMealEntry:hover {
     text-decoration: underline;
-    cursor: pointer;
 }
 
 table thead tr th {
