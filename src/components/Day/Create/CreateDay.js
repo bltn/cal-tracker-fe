@@ -1,7 +1,7 @@
 import React from "react";
 import CreateDayButton from "./CreateDayButton";
 import CreateDayForm from "./CreateDayForm";
-import {URL, POST_DAY_PATH} from "../../../constants/ApiConstants";
+import {POST_DAY_PATH, URL} from "../../../constants/ApiConstants";
 import RequestUtils from "../../../utils/RequestUtils";
 
 export default class CreateDay extends React.Component {
@@ -38,7 +38,7 @@ export default class CreateDay extends React.Component {
 
         if (response.status === 200) {
             this.handleHideForm();
-            this.props.onDayCreated(data.day);
+            this.props.onDayCreated(data.day.id, data.day.name);
         }
     };
 

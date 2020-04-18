@@ -15,8 +15,8 @@ export default class Week extends React.Component {
         });
     }
 
-    handleDayCreated = (dayJson) => {
-        const newDays = [...this.state.days, dayJson];
+    handleDayCreated = (dayId, dayName) => {
+        const newDays = [...this.state.days, {id: dayId, name: dayName, meal_entries: []}];
         this.setState({ days: newDays });
     };
 
