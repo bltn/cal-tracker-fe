@@ -7,7 +7,7 @@ export default class CreateDayForm extends React.Component {
 
     render() {
         const formClasses = `create-day-form ${this.props.isVisible ? "" : "invisible"}`;
-        const spanClasses = "pointer-hover cancel";
+        const spanClasses = "pointer-hover red-underline-txt";
         const submitClasses = "create-day-btn green-btn pointer-hover";
 
         return (

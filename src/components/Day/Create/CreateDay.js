@@ -1,7 +1,7 @@
 import React from "react";
 import CreateDayButton from "./CreateDayButton";
 import CreateDayForm from "./CreateDayForm";
-import {URL, POST_DAYS_PATH} from "../../../constants/ApiConstants";
+import {URL, POST_DAY_PATH} from "../../../constants/ApiConstants";
 import RequestUtils from "../../../utils/RequestUtils";
 
 export default class CreateDay extends React.Component {
@@ -33,7 +33,7 @@ export default class CreateDay extends React.Component {
         const dayName = event.target.dayName.value;
         const body = JSON.stringify({day: {name: dayName}});
 
-        const response = await RequestUtils.submitPostRequest(URL + POST_DAYS_PATH, body);
+        const response = await RequestUtils.submitPostRequest(URL + POST_DAY_PATH, body);
         const data = await response.json();
 
         if (response.status === 200) {

@@ -34,6 +34,11 @@ h1 {
     padding: 10px;
 }
 
+.red-underline-txt {
+    color: #a50000;
+    text-decoration: underline;
+}
+
 .invisible {
     display: none !important;
 }
@@ -60,11 +65,6 @@ h1 {
     float: right;
 }
 
-.create-day-wrapper .create-day-form .cancel {
-    color: #a50000;
-    text-decoration: underline;
-}
-
 table {
     display: inline-block;
     border-collapse: collapse;
@@ -88,12 +88,22 @@ table caption span.dayName {
     font-size: 20px;
 }
 
-table caption span.addNewMealEntry {
+table caption span.add-new-meal-entry {
     float: right;
     color: green;
 }
 
-table caption span.addNewMealEntry:hover {
+table caption span.delete-day {
+    float: right;
+    margin-right: 10px;
+    color: #a50000;
+}
+
+table caption span.delete-day:hover {
+    text-decoration: underline;
+}
+
+table caption span.add-new-meal-entry:hover {
     text-decoration: underline;
 }
 

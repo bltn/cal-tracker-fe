@@ -9,5 +9,14 @@ export default class RequestUtils {
 
         return fetch(url, requestOptions);
     };
+
+    static submitDeleteRequest = async (url) => {
+        const requestOptions = {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'}
+        };
+
+        return fetch(url, requestOptions);
+    };
 }
 
