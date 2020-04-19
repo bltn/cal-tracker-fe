@@ -48,8 +48,14 @@ export default class CreateMealEntry extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <CreateMealEntryButton isVisible={this.state.isLinkVisible} onClick={this.handleShowForm}/>
-                <CreateMealEntryForm isVisible={this.state.isFormVisible} hideForm={this.handleHideForm} onSubmit={this.handleFormSubmit}/>
+                <CreateMealEntryButton
+                    isVisible={this.state.isLinkVisible}
+                    onClick={this.handleShowForm}/>
+
+                <CreateMealEntryForm
+                    isVisible={this.state.isFormVisible}
+                    hideForm={this.handleHideForm}
+                    onSubmit={this.handleFormSubmit}/>
             </React.Fragment>
         )
     }

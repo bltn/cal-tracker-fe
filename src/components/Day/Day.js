@@ -18,9 +18,23 @@ export default class Day extends React.Component {
         });
     };
 
+    handleMealEntryDeleted = (mealEntryId) => {
+        const newMealEntries = [...this.state.mealEntries].filter(mealEntry => mealEntry.id !== mealEntryId);
+
+        this.setState({
+            mealEntries: newMealEntries
+        });
+    };
+
     render() {
         const mealEntryComponents = this.state.mealEntries.map((mealEntry) => {
-            return <MealEntry key={mealEntry.id} id={mealEntry.id} name={mealEntry.name} calories={mealEntry.calories}/>
+            return <MealEntry
+                key={mealEntry.id}
+                id={mealEntry.id}
+                name={mealEntry.name}
+                calories={mealEntry.calories}
+                dayId={this.props.id}
+                onMealEntryDeleted={this.handleMealEntryDeleted}/>
         });
 
         const dayNameSpanClasses = "dayName";

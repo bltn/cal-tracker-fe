@@ -125,6 +125,16 @@ table tbody tr:nth-child(odd) {
     background-color: rgba(230, 203, 0, 0.42);
 }
 
+.delete-meal-entry {
+    float: right;
+    color: #a50000;
+    cursor: pointer;
+}
+
+.delete-meal-entry:hover {
+    text-decoration: underline;
+}
+
 .create-meal-entry-form {
     display: inline-block;
     margin-top: 10px;
