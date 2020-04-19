@@ -88,9 +88,18 @@ table caption span.dayName {
     font-size: 20px;
 }
 
-table caption span.add-new-meal-entry {
-    float: right;
-    color: green;
+.add-new-meal-entry {
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.add-new-meal-entry:hover {
+    text-decoration: underline;
+}
+
+.table-wrapper {
+    display: inline-block;
 }
 
 table caption span.delete-day {
@@ -100,10 +109,6 @@ table caption span.delete-day {
 }
 
 table caption span.delete-day:hover {
-    text-decoration: underline;
-}
-
-table caption span.add-new-meal-entry:hover {
     text-decoration: underline;
 }
 
@@ -118,4 +123,28 @@ table tbody tr td {
 
 table tbody tr:nth-child(odd) {
     background-color: rgba(230, 203, 0, 0.42);
+}
+
+.create-meal-entry-form {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.create-meal-entry-form .create-meal-entry-btn {
+    padding: 5px;
+    float: right;
+    border: 1px solid black;
+}
+
+.create-meal-entry-form .calories {
+    width: 80px;
+}
+
+.create-meal-entry-form input[type="text"] {
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.cancel-new-meal-entry {
+    float: left;
 }
