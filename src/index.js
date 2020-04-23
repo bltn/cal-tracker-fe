@@ -1,6 +1,6 @@
 import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Week from "./components/Week/Week";
+import App from "./components/App/App";
 
-ReactDOM.render(<Week />, document.getElementById("stem"));
+ReactDOM.render(<App />, document.getElementById("stem"));

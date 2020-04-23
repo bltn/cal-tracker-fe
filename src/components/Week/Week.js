@@ -2,6 +2,7 @@ import React from "react";
 import Day from "../Day/Day";
 import CreateDay from "../Day/Create/CreateDay";
 import {URL, GET_DAYS_PATH} from "../../constants/ApiConstants";
+import RequestUtils from "../../utils/RequestUtils";
 
 export default class Week extends React.Component {
     constructor(props) {
@@ -10,9 +11,9 @@ export default class Week extends React.Component {
     }
 
     componentDidMount() {
-        fetch(URL + GET_DAYS_PATH).then(res => res.json()).then(result => {
-            this.setState({days: result})
-        });
+        RequestUtils.submitGetRequest(URL + GET_DAYS_PATH)
+            .then(res => res.json())
+            .then(result => this.setState({days: result}));
     }
 
     handleDayCreated = (dayId, dayName) => {
