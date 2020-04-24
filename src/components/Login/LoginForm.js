@@ -17,9 +17,9 @@ export default class LoginForm extends React.Component {
         });
 
         const response = await RequestUtils.submitPostRequest(URL + LOGIN_PATH, body, false);
-        const payload = await response.json();
 
         if (response.status === 200) {
+            const payload = await response.json();
             this.props.onLogin(payload.auth_token);
         }
     };
