@@ -1,7 +1,6 @@
 import React from "react";
 import MealEntry from "../MealEntry/MealEntry";
-import DeleteDay from "./Delete/DeleteDay";
-import CreateMealEntry from "../MealEntry/Create/CreateMealEntry";
+import DayTable from "./Table/DayTable";
 
 export default class Day extends React.Component {
     constructor(props) {
@@ -37,33 +36,23 @@ export default class Day extends React.Component {
                 onMealEntryDeleted={this.handleMealEntryDeleted}/>
         });
 
-        const dayNameSpanClasses = "dayName";
+        const getTotalCalories = () => {
+            if (this.state.mealEntries.length === 0) {
+                return 0;
+            }
+            return this.state.mealEntries.map(mealEntry => mealEntry.calories).reduce((a, b) => a + b);
+        };
 
         return (
             <div className="table-wrapper">
-                <table>
-                    <caption>
-                        <span className={dayNameSpanClasses}>{this.props.name}</span>
-                        <DeleteDay key={this.props.id} id={this.props.id} onDayDeleted={this.props.onDayDeleted}/>
-                    </caption>
-                    <thead>
-                    <tr>
-                        <th>Meal name</th>
-                        <th>Calories</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {mealEntryComponents}
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td/>
-                        <td valign="bottom" align="right">
-                            <CreateMealEntry dayId={this.props.id} onMealEntryCreated={this.handleMealEntryCreated}/>
-                        </td>
-                    </tr>
-                    </tfoot>
-                </table>
+                <DayTable
+                    id={this.props.id}
+                    key={this.props.key}
+                    name={this.props.name}
+                    totalCalories={getTotalCalories()}
+                    onDayDeleted={this.props.onDayDeleted}
+                    mealEntryComponents={mealEntryComponents}
+                    onMealEntryCreated={this.handleMealEntryCreated}/>
             </div>
         )
     }
